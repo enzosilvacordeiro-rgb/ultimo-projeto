@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Análise de Tokens - Mentor de Carreiras IA</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>💼 Mentor de Carreiras & Análise de Tokens</h1>
+        <p class="subtitle">
+            Veja na prática como o nível de detalhamento dos prompts altera o consumo de <strong>Tokens de Entrada, Saída e Total</strong>.
+        </p>
+
+        <div class="grid-prompts">
+            <!-- Teste 1: Prompt Curto -->
+            <div class="card">
+                <h2>1. Prompt Curto</h2>
+                <textarea id="prompt-curto" rows="4">Me dê dicas para transição de carreira para a área de Tecnologia.</textarea>
+                <button onclick="executarTeste('curto')">Executar Prompt Curto</button>
+
+                <div id="resultado-curto" class="metrics-box hidden">
+                    <h3>📊 Métricas de Tokens</h3>
+                    <ul>
+                        <li><span>Tokens de Entrada:</span> <strong id="in-curto">-</strong></li>
+                        <li><span>Tokens de Saída:</span> <strong id="out-curto">-</strong></li>
+                        <li class="total"><span>Total de Tokens:</span> <strong id="total-curto">-</strong></li>
+                    </ul>
+                    <div class="resposta-preview">
+                        <strong>Resposta do Mentor:</strong>
+                        <p id="resposta-curto"></p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Teste 2: Prompt Detalhado -->
+            <div class="card">
+                <h2>2. Prompt Detalhado</h2>
+                <textarea id="prompt-detalhado" rows="4">Sou formado em Administração com 5 anos de experiência. Quero migrar para Ciência de Dados em 12 meses. Crie um plano de estudo semanal focando em Python, SQL e projetos práticos para o meu portfólio.</textarea>
+                <button onclick="executarTeste('detalhado')">Executar Prompt Detalhado</button>
+
+                <div id="resultado-detalhado" class="metrics-box hidden">
+                    <h3>📊 Métricas de Tokens</h3>
+                    <ul>
+                        <li><span>Tokens de Entrada:</span> <strong id="in-detalhado">-</strong></li>
+                        <li><span>Tokens de Saída:</span> <strong id="out-detalhado">-</strong></li>
+                        <li class="total"><span>Total de Tokens:</span> <strong id="total-detalhado">-</strong></li>
+                    </ul>
+                    <div class="resposta-preview">
+                        <strong>Resposta do Mentor:</strong>
+                        <p id="resposta-detalhado"></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Painel de Comparação -->
+        <div id="painel-comparativo" class="card comparativo hidden">
+            <h2>📈 Conclusão & Comparação do Consumo</h2>
+            <div id="analise-texto"></div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
